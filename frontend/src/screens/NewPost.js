@@ -30,7 +30,7 @@ const NewPost = () => {
     
     try {
 
-        const response = await axios.post("http://localhost:8080/api/blogs", {
+        const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/blogs`, {
             title,
             content,
             thumbnail: imageUrlFromUpload
@@ -57,7 +57,7 @@ const NewPost = () => {
         const formDataImage = new FormData();
         formDataImage.append("image", image);
   
-        const { data: { data: {url} } } = await axios.post("http://localhost:8080/api/upload", formDataImage);
+        const { data: { data: {url} } } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/upload`, formDataImage);
         // console.log(`imageUrl: ${Url}`);
         return url;
       }

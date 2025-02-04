@@ -35,7 +35,7 @@ const SignupScreen = () => {
         const formDataImage = new FormData();
         formDataImage.append("image", image);
   
-        const { data: { data: {url} } } = await axios.post("http://localhost:8080/api/upload", formDataImage);
+        const { data: { data: {url} } } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/upload`, formDataImage);
         // console.log(`imageUrl: ${Url}`);
         setLocation(url);
         return url;
@@ -49,7 +49,7 @@ const SignupScreen = () => {
 
   const saveUserToDB = async (imageUrlFromUpload) => {
     try {
-      const { data: {data} } = await axios.post("http://localhost:8080/api/users/signup", {
+      const { data: {data} } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/signup`, {
         name: name,
         email: email,
         password: password,

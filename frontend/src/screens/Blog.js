@@ -14,7 +14,7 @@ const Article = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/blogs/${slug}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/blogs/${slug}`);
         setArticle(response.data.data);
       } catch (err) {
         setError("Article not found");

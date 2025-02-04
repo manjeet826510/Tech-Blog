@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/api/blogs")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000") // Add this line
+@CrossOrigin(origins = "https://tech-blog-teal-kappa.vercel.app/") // Add this line
 public class BlogController {
 
     private final BlogService blogService;

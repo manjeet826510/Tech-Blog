@@ -25,7 +25,7 @@ const BlogScreen = () => {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:8080/api/blogs", {
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/blogs`, {
         params: {
           page: currentPage - 1, // Backend uses 0-based indexing
           query: searchTerm || null,

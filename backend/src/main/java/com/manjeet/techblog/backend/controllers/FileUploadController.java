@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/api/upload")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://tech-blog-teal-kappa.vercel.app/") // Add this line
 public class FileUploadController {
 
     private final S3Service s3Service;
